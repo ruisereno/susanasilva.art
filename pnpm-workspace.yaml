@@ -1,0 +1,7 @@
+minimumReleaseAge: 4320
+minimumReleaseAgeStrict: true
+minimumReleaseAgeIgnoreMissingTime: false
+saveExact: true
+savePrefix: ""
+allowBuilds:
+  esbuild: true
