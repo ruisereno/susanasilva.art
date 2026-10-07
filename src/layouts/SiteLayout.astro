@@ -1,0 +1,147 @@
+---
+import Layout from "./Layout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  activePage?: "work" | "about" | "contact";
+}
+const { title, description, activePage } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <a class="skip-link" href={activePage === "work" ? "#work" : "#main-content"}>
+    Skip to content
+  </a>
+  <header>
+    <nav aria-label="Main navigation">
+      <a
+        href="/work/"
+        aria-current={activePage === "work" ? "page" : undefined}
+      >
+        work
+      </a>
+      <a class="name" href="/" aria-label="Susana Silva home">
+        susana silva
+      </a>
+      <div class="right-links">
+        <a
+          href="/about/"
+          aria-current={activePage === "about" ? "page" : undefined}
+        >
+          about
+        </a>
+        <a
+          href="/contact/"
+          aria-current={activePage === "contact" ? "page" : undefined}
+        >
+          contact
+        </a>
+      </div>
+    </nav>
+  </header>
+  <slot />
+  <footer>
+    <div class="social-links" aria-label="Social profiles">
+      <a
+        href="https://www.instagram.com/sigsillustration/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        instagram
+      </a>
+      <a
+        href="https://www.behance.net/sigsillustration"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        behance
+      </a>
+    </div>
+    <span class="copyright">© {new Date().getFullYear()} Susana Silva</span>
+  </footer>
+</Layout>
+
+<style>
+  .skip-link {
+    position: fixed;
+    top: -5rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    background: white;
+    z-index: 30;
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--color-background);
+  }
+  nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    max-width: var(--content-width);
+    margin: auto;
+    padding: 1.6rem var(--space-page);
+  }
+  nav a {
+    text-decoration: none;
+    width: fit-content;
+  }
+  nav a:hover,
+  nav a[aria-current="page"] {
+    text-decoration: underline;
+  }
+  .name {
+    font-size: 1.25rem;
+    letter-spacing: -0.04em;
+  }
+  .right-links {
+    justify-self: end;
+    display: flex;
+    gap: 1.25rem;
+  }
+  footer {
+    max-width: var(--content-width);
+    margin-inline: auto;
+    padding: 1.5rem var(--space-page);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 1rem;
+    color: var(--color-muted);
+  }
+  footer a {
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+  }
+  .copyright {
+    text-align: right;
+  }
+  @media (max-width: 540px) {
+    .right-links {
+      gap: 0.75rem;
+    }
+    nav {
+      padding-block: 1.1rem;
+      font-size: 1rem;
+    }
+    .name {
+      font-size: 1.1rem;
+    }
+    footer {
+      font-size: 0.9rem;
+    }
+  }
+</style>
