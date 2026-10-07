@@ -1,0 +1,36 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout
+  title="Contact — Susana Silva"
+  description="Get in touch with Susana Silva through Instagram or Behance."
+  activePage="contact"
+>
+  <main id="main-content">
+    <section aria-label="Contact">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </section>
+  </main>
+</SiteLayout>
+
+<style>
+  main {
+    min-height: calc(100svh - 10rem);
+    display: grid;
+    place-items: center;
+    padding: 5rem var(--space-page);
+  }
+  section {
+    max-width: 48rem;
+    text-align: center;
+  }
+  p {
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+    line-height: 1.4;
+    margin: 0 0 2rem;
+  }
+</style>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="626" viewBox="0 0 808 632">
+  <rect width="808" height="632" fill="#f1f0ed" />
+  <g fill="none" stroke="#c4c1ba" stroke-width="2">
+    <rect x="374" y="266" width="60" height="48" rx="2" />
+    <circle cx="417" cy="280" r="5" />
+    <path d="m374 304 17-18 18 18 9-9 16 16" />
+  </g>
+  <text x="404" y="344" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#817e77">gallery · tablet</text>
+  <text x="404" y="372" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#817e77">800 × 626</text>
+</svg>

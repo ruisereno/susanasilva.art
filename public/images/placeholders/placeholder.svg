@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="808" height="632" viewBox="0 0 808 632">
+  <rect width="808" height="632" fill="#f1f0ed" />
+  <g fill="none" stroke="#c4c1ba" stroke-width="2">
+    <rect x="374" y="276" width="60" height="48" rx="2" />
+    <circle cx="417" cy="290" r="5" />
+    <path d="m374 314 17-18 18 18 9-9 16 16" />
+  </g>
+  <text x="404" y="354" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#817e77">illustration</text>
+</svg>

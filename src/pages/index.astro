@@ -1,17 +1,38 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
-<Layout title="Susana Silva" description="Susana Silva’s website.">
-  <main>
-    <h1>Susana Silva</h1>
+<SiteLayout
+  title="Susana Silva — Illustration"
+  description="Welcome to Susana Silva’s world of illustration. Explore colorful portraits, botanicals, and little stories."
+>
+  <main id="main-content">
+    <section id="about" aria-label="Introduction">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <br />
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </section>
   </main>
-</Layout>
+</SiteLayout>
 
 <style>
   main {
-    max-width: var(--content-width);
-    margin-inline: auto;
-    padding: var(--space-page);
+    min-height: calc(100svh - 10rem);
+    display: grid;
+    place-items: center;
+    padding: 5rem var(--space-page);
+  }
+  section {
+    text-align: center;
+    width: 100%;
+  }
+  p {
+    font-size: clamp(1.65rem, 3.8vw, 3.5rem);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    max-width: 65rem;
+    margin: 0 auto 2.5rem;
   }
 </style>

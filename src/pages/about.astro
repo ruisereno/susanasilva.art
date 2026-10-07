@@ -1,0 +1,49 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout
+  title="About — Susana Silva"
+  description="About Susana Silva."
+  activePage="about"
+>
+  <main id="main-content">
+    <article aria-label="About Susana Silva">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur.
+      </p>
+      <p>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+        officia deserunt mollit anim id est laborum.
+      </p>
+    </article>
+  </main>
+</SiteLayout>
+
+<style>
+  main {
+    min-height: calc(100svh - 10rem);
+    display: grid;
+    place-items: center;
+    padding: 5rem var(--space-page);
+  }
+  article {
+    max-width: 48rem;
+  }
+  p {
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.5rem;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+</style>
