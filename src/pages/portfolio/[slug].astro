@@ -1,6 +1,6 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
-import { artworks } from "../../data/artworks";
+import { artworks } from "../../data/portfolio";
 export function getStaticPaths() {
   return artworks.map((artwork, index) => ({
     params: { slug: artwork.slug },
@@ -16,7 +16,7 @@ const { artwork, previous, next } = Astro.props;
 
 <SiteLayout
   title={`${artwork.title} — Susana Silva`}
-  description={artwork.description}
+  description={`${artwork.title} — Illustration by Susana Silva.`}
 >
   <main id="main-content">
     <article class="project">
@@ -31,23 +31,22 @@ const { artwork, previous, next } = Astro.props;
           sizes={`(max-width: 640px) calc(100vw - 40px), min(calc(100vw - 40px), calc((100svh - 15rem) * ${artwork.width / artwork.height}))`}
           width={artwork.width}
           height={artwork.height}
-          alt={artwork.description}
+          alt={artwork.title}
           decoding="async"
         />
       </a>
       <div class="project-info">
         <h1>{artwork.title}</h1>
-        <p>{artwork.description}.</p>
       </div>
     </article>
     <nav class="project-navigation" aria-label="More illustrations">
-      <a href={`/illustrations/${previous.slug}/`}>
+      <a href={`/portfolio/${previous.slug}/`}>
         ← <span>{previous.title}</span>
       </a>
       <a class="all-illustrations" href="/">
         All illustrations
       </a>
-      <a href={`/illustrations/${next.slug}/`}>
+      <a href={`/portfolio/${next.slug}/`}>
         <span>{next.title}</span> →
       </a>
     </nav>
@@ -86,11 +85,6 @@ const { artwork, previous, next } = Astro.props;
     font-weight: 400;
     line-height: 1.5;
     margin: 0 0 1rem;
-  }
-  p {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin: 0;
   }
   .project-navigation {
     display: grid;
