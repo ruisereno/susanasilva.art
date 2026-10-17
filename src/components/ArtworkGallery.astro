@@ -10,6 +10,7 @@ import { artworks } from "../data/portfolio";
       aria-label={`View ${artwork.title}`}
     >
       <img
+        data-image-reveal
         src={artwork.gallery.desktop}
         srcset={`${artwork.gallery.mobile} 480w, ${artwork.gallery.tablet} 800w, ${artwork.gallery.desktop} 1200w`}
         sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1920px) calc((100vw - 100px) / 2), 920px"

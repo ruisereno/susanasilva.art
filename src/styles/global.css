@@ -46,6 +46,18 @@ img {
   height: auto;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .image-reveals [data-image-reveal] {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+  }
+
+  .image-reveals [data-image-reveal="visible"],
+  .image-reveals a:focus-visible [data-image-reveal] {
+    opacity: 1;
+  }
+}
+
 :focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 4px;

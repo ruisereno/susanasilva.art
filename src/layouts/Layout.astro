@@ -39,8 +39,19 @@ const { title, description } = Astro.props;
       href="/images/site/flower-180.png"
     />
     <title>{title}</title>
+    <script is:inline>
+      if (
+        "IntersectionObserver" in window &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        document.documentElement.classList.add("image-reveals");
+      }
+    </script>
   </head>
   <body>
     <slot />
+    <script>
+      import "../scripts/image-reveals";
+    </script>
   </body>
 </html>

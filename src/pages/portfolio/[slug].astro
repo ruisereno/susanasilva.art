@@ -26,6 +26,7 @@ const { artwork, previous, next } = Astro.props;
         aria-label={`Open full-size image of ${artwork.title}`}
       >
         <img
+          data-image-reveal
           src={artwork.detail.tablet}
           srcset={`${artwork.detail.mobile} 800w, ${artwork.detail.tablet} 1200w, ${artwork.detail.desktop} 1600w`}
           sizes={`(max-width: 640px) calc(100vw - 40px), min(calc(100vw - 40px), calc((100svh - 15rem) * ${artwork.width / artwork.height}))`}
