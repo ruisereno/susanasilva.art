@@ -8,6 +8,7 @@
     "node": "^22.22.3 || ^24.16.0 || >=26.3.0"
   },
   "scripts": {
+    "images": "bash scripts/generate-images.sh",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",

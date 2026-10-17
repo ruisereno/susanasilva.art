@@ -1,0 +1,57 @@
+---
+import { artworks } from "../data/artworks";
+---
+
+<div class="gallery">
+  {artworks.map((artwork, index) => (
+    <a
+      class="artwork"
+      href={`/illustrations/${artwork.slug}/`}
+      aria-label={`View ${artwork.title}`}
+    >
+      <img
+        src={artwork.gallery.desktop}
+        srcset={`${artwork.gallery.mobile} 480w, ${artwork.gallery.tablet} 800w, ${artwork.gallery.desktop} 1200w`}
+        sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1920px) calc((100vw - 100px) / 2), 920px"
+        alt={artwork.description}
+        width={artwork.width}
+        height={artwork.height}
+        loading={index === 0 || index === 4 ? "eager" : "lazy"}
+        decoding="async"
+      />
+    </a>
+  ))}
+</div>
+<style>
+  .gallery {
+    columns: 2;
+    column-gap: var(--space-gallery);
+  }
+  .artwork {
+    display: block;
+    break-inside: avoid;
+    margin-bottom: var(--space-gallery);
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  @media (hover: hover) {
+    .artwork:hover {
+      opacity: 0.9;
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .artwork {
+      transition: opacity 180ms ease;
+    }
+  }
+  @media (max-width: 640px) {
+    .gallery {
+      columns: 1;
+    }
+    .artwork {
+      margin-bottom: 3rem;
+    }
+  }
+</style>

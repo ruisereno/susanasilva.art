@@ -1,8 +1,9 @@
 :root {
-  --color-background: #fff;
-  --color-text: #232321;
-  --color-muted: #787873;
-  --font-body: "Times New Roman", Times, serif;
-  --space-page: clamp(1rem, 2.4vw, 2.5rem);
-  --content-width: 110rem;
+  --color-background: #fafafa;
+  --color-text: #363636;
+  --color-muted: #737373;
+  --font-body: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --space-page: clamp(1.25rem, 1.4vw, 2rem);
+  --space-gallery: clamp(2rem, 4.2vw, 4.5rem);
+  --content-width: 120rem;
 }
