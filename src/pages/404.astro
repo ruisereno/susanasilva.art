@@ -1,0 +1,44 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout
+  title="Page not found — Susana Silva"
+  description="This page couldn’t be found. Explore illustrations by Susana Silva."
+>
+  <main id="main-content" class="not-found">
+    <h1>404</h1>
+    <a href="/">Homepage</a>
+  </main>
+</SiteLayout>
+
+<style>
+  .not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 68rem;
+    min-height: calc(100svh - 16rem);
+    margin-inline: auto;
+    padding: 3rem var(--space-page);
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0 0 1.5rem;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+
+  .not-found a {
+    text-decoration: none;
+  }
+
+  .not-found a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+</style>
