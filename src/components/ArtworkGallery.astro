@@ -1,19 +1,19 @@
 ---
-import { artworks } from "../data/artworks";
+import { artworks } from "../data/portfolio";
 ---
 
 <div class="gallery">
   {artworks.map((artwork, index) => (
     <a
       class="artwork"
-      href={`/illustrations/${artwork.slug}/`}
+      href={`/portfolio/${artwork.slug}/`}
       aria-label={`View ${artwork.title}`}
     >
       <img
         src={artwork.gallery.desktop}
         srcset={`${artwork.gallery.mobile} 480w, ${artwork.gallery.tablet} 800w, ${artwork.gallery.desktop} 1200w`}
         sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1920px) calc((100vw - 100px) / 2), 920px"
-        alt={artwork.description}
+        alt={artwork.title}
         width={artwork.width}
         height={artwork.height}
         loading={index === 0 || index === 4 ? "eager" : "lazy"}

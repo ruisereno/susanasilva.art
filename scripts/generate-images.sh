@@ -15,7 +15,7 @@ if ! command -v magick >/dev/null; then
   exit 1
 fi
 
-mkdir -p public/images/work public/images/site
+mkdir -p public/images/portfolio public/images/site
 
 generate_webp() {
   local source="$1" width="$2" output="$3" max_bytes="$4" quality
@@ -44,7 +44,7 @@ for source in "$source_dir"/*.[jJ][pP][gG]; do
     if [[ "$usage" == detail ]]; then
       max_bytes=300000
     fi
-    generate_webp "$source" "$width" "public/images/work/${device}-${slug}-${usage}.webp" "$max_bytes"
+    generate_webp "$source" "$width" "public/images/portfolio/${device}-${slug}-${usage}.webp" "$max_bytes"
   done
 done
 
